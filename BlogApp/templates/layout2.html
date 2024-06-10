@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset = "UTF-8">
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'blog/estilos.css' %}">
+ <title>Artigos</title>
+</head>
+<body>
+
+
+
+<nav>
+  <div class="wrapper">
+    <div class="logo"><a href="#">fakebook</a></div>
+    <input type="radio" name="slider" id="menu-btn">
+    <input type="radio" name="slider" id="close-btn">
+    <ul class="nav-links">
+      <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+      <li><a href="https://a22202735.pythonanywhere.com/BlogApp/">Artigos</a></li>
+      <li><a href="https://a22202735.pythonanywhere.com/BlogApp/usuarios">Usuários</a></li>
+      <li>
+
+        {% if request.user.is_authenticated %}
+            <a href="#" class="desktop-item">Meu Perfil</a>
+            <input type="checkbox" id="showDrop">
+            <label for="showDrop" class="mobile-item">Meu Perfil</label>
+            <ul class="drop-menu">
+            <li><a href="https://a22202735.pythonanywhere.com/BlogApp/usuario/{{request.user.id}}">Perfil</a></li>
+            {% for info in request.user.infoAdicionalUser.all %}
+                <li><a href="https://a22202735.pythonanywhere.com/BlogApp/editarUsuario">Editar Perfil</a></li>
+            {% empty %}
+                <li><a href="https://a22202735.pythonanywhere.com/BlogApp/adicionarInfoUsuario">Editar Perfil</a></li>
+            {% endfor %}
+            <li><a href="https://a22202735.pythonanywhere.com/BlogApp/meusArtigos/">Meus Artigos</a></li>
+            <li> <a href="https://a22202735.pythonanywhere.com/Autenticacao/logout/Artigos">Logout</a></li>
+            </ul>
+            </li>
+        {% else %}
+       <li> <a href= "https://a22202735.pythonanywhere.com/Autenticacao/login/Artigos">Login</a></li>
+        {% endif %}
+
+        <li><a href="#">Contacto</a></li>
+
+    </ul>
+    <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+  </div>
+</nav>
+
+<div class="body-container">
+    <div class="body-text">
+{% if request.user.is_authenticated %}
+
+{% else %}
+  <div class="title">O <a href="#">Fakebook</a> ajuda-te a comunicar e a partilhar com as pessoas que fazem parte da tua vida.</div>
+  <div class="sub-title">Cria uma conta ou inicia sessão no <a href="https://a22202735.pythonanywhere.com/Autenticacao/login/Artigos">Fakebook</a>!</div>
+{% endif %}
+</div>
+</div>
+
+     {% block content %}
+     {% endblock %}
+
+
+</body>
+</html>
+

@@ -1,0 +1,46 @@
+{% extends "layout2.html" %}
+
+{% block content %}
+
+
+  <h2><a href= "{% url 'artigos:artigos'  %}">Home Page</a></h2>
+
+    {% if request.user.is_authenticated %}
+        <a href="http://a22202735.pythonanywhere.com/Autenticacao/logout/artigos/autor/{{autor.primeiroNome}} {{autor.ultimoNome}}"><button>Logout</button></a>
+    {% else %}
+        <a href= "http://a22202735.pythonanywhere.com/Autenticacao/login/artigos/autor/{{autor.primeiroNome}} {{autor.ultimoNome}}"><button>Login</button></a>
+    {% endif %}
+
+  <h3>{{autor.primeiroNome}} {{autor.ultimoNome}}</h3>
+
+
+  <p>Descrição: {{autor.descricao}}</p>
+  <p>Email: {{autor.email}}</p>
+  <p>Idade: {{autor.idade}}</p>
+  <img src="{{ autor.fotoPerfil.url }}" width="200" height="150">
+
+
+
+
+  <p>Lista de Artigos:</p>
+  {% for artigo in artigos %}
+    <ul>
+         <li>Artigo: <a href= "{% url 'artigos:artigo' artigo.titulo %}">{{artigo.titulo}}</a></li>
+    </ul>
+  {% endfor %}
+
+
+    {% if request.user.is_authenticated %}
+      <a href="http://a22202735.pythonanywhere.com/artigos/editarAutor/{{autor.primeiroNome}} {{autor.ultimoNome}}"><button>Editar Informação do Autor</button></a>
+    {% else %}
+     <a href="http://a22202735.pythonanywhere.com/Autenticacao/login/artigos/editarAutor/{{autor.primeiroNome}} {{autor.ultimoNome}}"><button>Editar Informação do Autor</button></a>
+    {% endif %}
+
+    {% if request.user.is_authenticated %}
+      <a href="http://a22202735.pythonanywhere.com/artigos/apagarAutor/{{autor.primeiroNome}} {{autor.ultimoNome}}"><button>Apagar Autor</button></a>
+    {% else %}
+     <a href="http://a22202735.pythonanywhere.com/Autenticacao/login/artigos/apagarAutor/{{autor.primeiroNome}} {{autor.ultimoNome}}"><button>Apagar Autor</button></a>
+    {% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "layout3.html" %}
+
+{% block content %}
+
+
+    <div class = "cursoTeste">
+
+
+<h1 class="titulo2">Departamentos</h1>
+
+
+{% if request.user.is_authenticated %}
+    <h1 class="titulo3">Adiciona <a href="https://a22202735.pythonanywhere.com/AppCurso/novoDepartamento"><span class = "green">aqui</span></a> um departamento!</h1>
+{% else %}
+     <h1 class="titulo3">Adiciona <a href="https://a22202735.pythonanywhere.com/Autenticacao/login/AppCurso/novoDepartamento"><span class = "green">aqui</span></a> um departamento!</h1>
+{% endif %}
+
+
+
+  {% for departamento in departamentos %}
+                <div class="article-box1">
+
+                   <div class="info-content">
+                       <ul>
+                        <h4><a  href="https://a22202735.pythonanywhere.com/AppCurso/departamento/{{departamento.nome}}">{{departamento.nome}} </a></h4>
+                       </ul>
+                   </div>
+
+                </div>
+
+
+
+
+
+ {% endfor %}
+
+
+
+
+    </div>
+
+
+
+
+{% endblock %}

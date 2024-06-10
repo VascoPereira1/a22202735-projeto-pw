@@ -1,0 +1,25 @@
+{% extends 'layout5.html' %}
+
+{% block content %}
+<div class="login-container">
+    <h3>Login</h3>
+
+    {% if mensagem %}
+        <p class="message">{{ mensagem }}</p>
+    {% endif %}
+    <form action="https://a22202735.pythonanywhere.com/Autenticacao/login/{{homePage}}" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Palavra-passe">
+        <input type="submit" value="Iniciar sessão">
+    </form>
+
+    <a href="{% url 'reset_password' %}" class="forgot-password-link">Não sabes a tua palavra-passe?</a>
+
+    <hr>
+
+    <a href="https://a22202735.pythonanywhere.com/Autenticacao/registo/{{homePage}}">
+        <button class="secondary-button">Criar nova conta</button>
+    </a>
+</div>
+{% endblock %}

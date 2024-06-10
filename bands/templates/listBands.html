@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    {% if request.user.is_authenticated %}
+        <a class ="teste" href="https://a22202735.pythonanywhere.com/Autenticacao/logout/Bandas"><button  class="button-22" role="button" >Logout</button></a>
+    {% else %}
+        <a class = "teste" href="https://a22202735.pythonanywhere.com/Autenticacao/login/Bandas"><button  class="button-22" role="button">Login</button></a>
+    {% endif %}
+
+     <h1>Lista de Bandas: </h1>
+    {% for banda in bands %}
+
+        <div class="info-box">
+            <div class="info-content">
+            <ul>
+                <a href="{% url 'bands:banda' banda.name %}">{{banda.name}}</a>
+               <p>{{banda.biografia}}</p>
+
+
+            </ul>
+        </div>
+        <div class="info-image">
+            <img class="info-image" src="{{ banda.imagem.url }}">
+        </div>
+        </div>
+
+    {% endfor %}
+
+
+<div>
+{% if request.user.is_authenticated %}
+    <a  class ="teste" href="{% url 'bands:nova_banda' %}"><button class="button-22" role="button">Inserir nova Banda</button></a>
+{% else %}
+     <a class ="teste" href="https://a22202735.pythonanywhere.com/Autenticacao/login/bandas/criarBanda/nova"><button class="button-22" role="button">Inserir nova Banda</button></a>
+{% endif %}
+</div>
+
+{% endblock %}

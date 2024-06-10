@@ -1,0 +1,23 @@
+{% extends "layout3.html" %}
+
+{% block content %}
+
+
+
+    <div class = "cursoTeste">
+
+
+<h1 class="titulo2">{{docente.nome}}</h1>
+
+
+{% if request.user.is_authenticated %}
+    <h1 class="titulo3"><a href="https://a22202735.pythonanywhere.com/AppCurso/apagarDocente/{{docente.nome}}"<span class = "green">Apaga</span></a> ou <a href="https://a22202735.pythonanywhere.com/AppCurso/editaDocente/{{docente.nome}}"><span class = "green">edita</span></a> este Docente!</h1>
+{% else %}
+    <h1 class="titulo3"><a href="https://a22202735.pythonanywhere.com/Autenticacao/login/AppCurso/apagarDocente/{{docente.nome}}"><span class = "green">Apaga</span></a> ou <a href="http://a22202735.pythonanywhere.com/Autenticacao/login/AppCurso/editaDocente/{{docente.nome}}"><span class = "green">edita</span></a> este Docente!</h1>
+{% endif %}
+
+
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "layout3.html" %}
+
+{% block content %}
+    <h3>Edita Area Cientifica</h3>
+
+    <form action="{% url 'cursos:edita_areaCientifica' areaCientifica.nome %}" method="post" enctype='multipart/form-data'>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit">
+    </form>
+
+{% endblock %}

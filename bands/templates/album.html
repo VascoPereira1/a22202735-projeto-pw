@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    {% if request.user.is_authenticated %}
+        <a class ="teste" href="https://a22202735.pythonanywhere.com/Autenticacao/logout/AppBandas/album/{{album.name}}"><button  class="button-22" role="button" >Logout</button></a>
+    {% else %}
+        <a class ="teste" href= "https://a22202735.pythonanywhere.com/Autenticacao/login/AppBandas/album/{{album.name}}"><button  class="button-22" role="button" >Login</button></a>
+    {% endif %}
+
+
+    <h1>{{album.name}}</h1>
+
+     <div class="info-box">
+            <div class="info-content">
+            <ul>
+                <p>Banda: {{album.band.name}} </p>
+                <p>Ano Criação: {{album.anoLancamento}}</p>
+            </ul>
+
+            <div class = "info-editarEapagar">
+            {% if request.user.is_authenticated %}
+      <a  class ="teste"  href="https://a22202735.pythonanywhere.com/AppBandas/editarAlbum/{{album.name}}">Editar informação do Album</a>
+{% else %}
+     <a  class ="teste"  href="https://a22202735.pythonanywhere.com/Autenticacao/login/AppBandas/editarAlbum/{{album.name}}">Editar Informação do Album</a>
+{% endif %}
+</div>
+
+<div class = "info-editarEapagar">
+{% if request.user.is_authenticated %}
+     <a class ="teste"   href="https://a22202735.pythonanywhere.com/AppBandas/apagarAlbum/{{album.name}}">Apagar Album</a>
+{% else %}
+     <a class ="teste"   href="https://a22202735.pythonanywhere.com/Autenticacao/login/AppBandas/apagarAlbum/{{album.name}}">Apagar Album</a>
+{% endif %}
+</div>
+
+        </div>
+        <div class="info-image">
+            <img class="info-image" src="{{ album.imagemAlbum.url }}">
+        </div>
+ </div>
+
+
+<div class="info-box">
+            <div class="info-content">
+                  <ul>
+  <p>Lista de Musicas do Album:</p>
+  {% for music in musics %}
+    <ul>
+        <div class = "info-editarEapagar">
+        <li><a href="{% url 'bands:musica' music.name %}">{{music.name}}</a></li>
+        </div>
+    </ul>
+    {% endfor %}
+      <ul>
+
+<div class = "info-editarEapagar">
+{% if request.user.is_authenticated %}
+     <a  class ="teste" href="{% url 'bands:nova_musica' album.name %}">Inserir nova Musica!</a>
+{% else %}
+     <a  class ="teste" href="https://a22202735.pythonanywhere.com/Autenticacao/login/bandas/criarMusica/nova/{{album.name}}">Inserir nova Musica!</a>
+{% endif %}
+</div>
+
+
+
+        </div>
+ </div>
+
+
+
+
+
+
+{% endblock %}

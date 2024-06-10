@@ -1,0 +1,19 @@
+{% extends 'layout5.html' %}
+
+{% block content %}
+<div class="registration-container">
+    <h3>Registo</h3>
+
+    <form action="https://a22202735.pythonanywhere.com/Autenticacao/registo/{{homePage}}" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="O seu username..">
+        <input type="text" name="nome" placeholder="O seu nome..">
+        <input type="text" name="apelido" placeholder="O seu apelido..">
+        <input type="email" name="email" placeholder="O seu email..">
+        <input type="password" name="password" placeholder="Defina a sua password..">
+        <input type="submit" value="Criar">
+    </form>
+
+    <a href="https://a22202735.pythonanywhere.com/Autenticacao/login/{{homePage}}" class="cancel-link">Cancelar</a>
+</div>
+{% endblock %}

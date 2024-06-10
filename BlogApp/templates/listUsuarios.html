@@ -1,0 +1,37 @@
+{% extends "layout2.html" %}
+
+{% block content %}
+
+
+    <div class="body-content">
+        <div class="column column-other">
+            <div class="text-box1">
+            <h2>Usuarios</h2>
+            </div>
+            {% for user in users %}
+            {% if user.username != 'admin' %}
+                <div class="article-box1">
+                {% for info in user.infoAdicionalUser.all %}
+                    <div class="autor-text1">
+                    <img src="{{ info.imagem.url }}" alt="{{ user.first_name }}">
+                    <p><a href="http://a22202735.pythonanywhere.com/BlogApp/usuario/{{user.id}}"><span class="blue">{{user.first_name}} {{user.last_name}}</span></a></p>
+                    </div>
+                    <div class="autor-text">
+                    <li>Bio: {{ info.biografia}} </li>
+                    </div>
+                {% empty %}
+                    <div class="autor-text1">
+                    <p>{{user.first_name}} {{user.last_name}}</p>
+                    </div>
+                    <p>Este usuario não tem perfil atualizado.</p>
+                {% endfor %}
+                </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

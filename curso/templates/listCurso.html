@@ -1,0 +1,114 @@
+{% extends "layout3.html" %}
+
+{% block content %}
+
+
+
+        <div class = "cursoTeste">
+
+
+<h1 class="titulo2">{{curso.nome}}</h1>
+
+
+{% if request.user.is_authenticated %}
+    <h1 class="titulo3"><a href="https://a22202735.pythonanywhere.com/AppCurso/apagarCurso/{{curso.nome}}"><span class = "green">Apaga</span></a> ou <a href="https://a22202735.pythonanywhere.com/AppCurso/editaCurso/{{curso.nome}}"><span class = "green">edita</span></a> este Curso!</h1>
+{% else %}
+    <h1 class="titulo3"><a href="https://a22202735.pythonanywhere.com/Autenticacao/login/AppCurso/apagarCurso/{{curso.nome}}"><span class = "green">Apaga</span></a> ou <a href="https://a22202735.pythonanywhere.com/Autenticacao/login/AppCurso/editaCurso/{{curso.nome}}"><span class = "green">edita</span></a> este Curso!</h1>
+{% endif %}
+
+
+
+
+                <div class="article-box1">
+                   <div class="info-content">
+                       <ul>
+                        <h4>Apresentação</h4>
+                        <span class= "black">{{curso.apresentacao}}</span>
+                        <h4>Objectivos</h4>
+                        <span class= "black">{{curso.objectivos}}</span>
+                        <h4>Competencias</h4>
+                        <span class= "black">{{curso.competencias}}</span>
+                        <h4>Condições de Acesso</h4>
+                        <span class= "black">{{curso.condicoesAcesso}}</span>
+                        <h4>Oportunidades de Carreira</h4>
+                        <span class= "black">{{curso.oportunidadesCarreira}}</span>
+                        <h4>Departamento</h4>
+                        <span class= "black">{{curso.departamento.nome}}</span>
+                       </ul>
+                   </div>
+
+                </div>
+
+
+
+               <div class="article-box1">
+                   <div class="info-content">
+                       <ul>
+                        <h4>Disciplinas</h4>
+                        <h5>1 º Ano</h5>
+                        <h6>1 º Semestre</h6>
+                        {% for disciplina in curso.disciplinas.all %}
+                             <ul>
+                             {% if disciplina.semestre ==  "1º Semestre"  and disciplina.ano ==  1 %}
+                                <a href= "{% url 'cursos:disciplina' disciplina.nome  %}">{{disciplina.nome}}</a>
+                             {% endif %}
+                             </ul>
+                        {% endfor %}
+                        <h6>2 º Semestre</h6>
+                        {% for disciplina in curso.disciplinas.all %}
+                             <ul>
+                             {% if disciplina.semestre ==  "2º Semestre"  and disciplina.ano ==  1 %}
+                                <a href= "{% url 'cursos:disciplina' disciplina.nome  %}">{{disciplina.nome}}</a>
+                             {% endif %}
+                             </ul>
+                        {% endfor %}
+                        <h5>2 º Ano</h5>
+                        <h6>1 º Semestre</h6>
+                        {% for disciplina in curso.disciplinas.all %}
+                             <ul>
+                             {% if disciplina.semestre ==  "1º Semestre"  and disciplina.ano ==  2 %}
+                                <a href= "{% url 'cursos:disciplina' disciplina.nome  %}">{{disciplina.nome}}</a>
+                             {% endif %}
+                             </ul>
+                        {% endfor %}
+                        <h6>2 º Semestre</h6>
+                        {% for disciplina in curso.disciplinas.all %}
+                             <ul>
+                             {% if disciplina.semestre ==  "2º Semestre"  and disciplina.ano ==  2 %}
+                                <a href= "{% url 'cursos:disciplina' disciplina.nome  %}">{{disciplina.nome}}</a>
+                             {% endif %}
+                             </ul>
+                        {% endfor %}
+                        <h5>3 º Ano</h5>
+                         <h6>1 º Semestre</h6>
+                        {% for disciplina in curso.disciplinas.all %}
+                             <ul>
+                             {% if disciplina.semestre ==  "1º Semestre"  and disciplina.ano ==  3 %}
+                                <a href= "{% url 'cursos:disciplina' disciplina.nome  %}">{{disciplina.nome}}</a>
+                             {% endif %}
+                             </ul>
+                        {% endfor %}
+                        <h6>2 º Semestre</h6>
+                        {% for disciplina in curso.disciplinas.all %}
+                             <ul>
+                             {% if disciplina.semestre ==  "2º Semestre"  and disciplina.ano ==  3 %}
+                                <a href= "{% url 'cursos:disciplina' disciplina.nome  %}">{{disciplina.nome}}</a>
+                             {% endif %}
+                             </ul>
+                        {% endfor %}
+
+                       </ul>
+                   </div>
+
+                </div>
+
+
+
+    </div>
+
+
+
+
+
+
+{% endblock %}

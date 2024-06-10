@@ -1,0 +1,35 @@
+{% extends "layout2.html" %}
+
+{% block content %}
+
+
+    <div class="body-content">
+        <div class="column column-other1">
+                <div class="article-box2">
+                {% for info in user.infoAdicionalUser.all %}
+                    <div class="autor-text1">
+                    <img src="{{ info.imagem.url }}" alt="{{ user.first_name }}">
+                    <p>{{user.username}}</p>
+                    </div>
+                    <div class="autor-text2">
+                    <li><span class="blue">Nome: </span>{{user.first_name}} {{user.last_name}}</li>
+                    <li><span class="blue">Email: </span>{{user.email}}</li>
+                    <li><span class="blue">Biografia: </span>{{ info.biografia}}</li>
+                    <li><span class="blue">Interesses: </span>{{info.interesses}}</li>
+                    <li><span class="blue">Profissão: </span>{{info.profissao}}</li>
+                    <li><span class="blue">Data de Nascimento: </span>{{info.dataNascimento}}</li>
+                    </div>
+                {% empty %}
+                    <div class="autor-text1">
+                    <p>{{user.first_name}} {{user.last_name}}</p>
+                    </div>
+                    <p>Este usuario não tem perfil atualizado.</p>
+                {% endfor %}
+                </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

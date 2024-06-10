@@ -1,0 +1,32 @@
+{% extends "layout2.html" %}
+
+{% block content %}
+
+
+  <div class="body-container">
+
+    <div class="body-content">
+        <div class="column column-other">
+            <div class="text-box1">
+            <h2>Meus Artigos</h2>
+            </div>
+            <p><span class="blue">Clique no artigo para editar</span></p>
+            {% for artigo in artigos %}
+            {% if artigo.autor == autor %}
+            <div class="article-box">
+                <img src="{{ artigo.imagem.url }}" alt="{{ artigo.titulo }}">
+                <a href="https://a22202735.pythonanywhere.com/BlogApp/editarArtigo/{{artigo.titulo}}" class="left-align">{{ artigo.titulo }}</a>
+                <div class="autor-text3">
+                <p>{{artigo.autor.first_name}} {{artigo.autor.last_name}}</p>
+                </div>
+                <p>{{artigo.introducao}}</p>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

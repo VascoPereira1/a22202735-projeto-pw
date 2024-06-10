@@ -1,0 +1,22 @@
+{% extends "layout3.html" %}
+
+{% block content %}
+
+<div class = "cursoTeste">
+
+
+<h1 class="titulo2">{{areaCientifica.nome}}</h1>
+
+
+{% if request.user.is_authenticated %}
+    <h1 class="titulo3"><a href="https://a22202735.pythonanywhere.com/AppCurso/apagarAreaCientifica/{{areaCientifica.nome}}"><span class = "green">Apaga</span></a> ou <a href="https://a22202735.pythonanywhere.com/AppCurso/editaAreaCientifica/{{areaCientifica.nome}}"><span class = "green">edita</span></a> esta Área Científica!</h1>
+{% else %}
+    <h1 class="titulo3"><a href="https://a22202735.pythonanywhere.com/Autenticacao/login/AppCurso/apagarAreaCientifica/{{areaCientifica.nome}}"><span class = "green">Apaga</span></a> ou <a href="https://a22202735.pythonanywhere.com/Autenticacao/login/AppCurso/editaAreaCientifica/{{areaCientifica.nome}}"><span class = "green">edita</span></a> esta Área Científica!</h1>
+{% endif %}
+
+
+    </div>
+
+
+
+{% endblock %}

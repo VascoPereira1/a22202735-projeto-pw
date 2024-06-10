@@ -1,0 +1,57 @@
+{% extends "layout3.html" %}
+
+{% block content %}
+
+
+
+        <div class = "cursoTeste">
+
+
+<h1 class="titulo2">Projeto de {{projeto.disciplina.nome}}</h1>
+
+
+{% if request.user.is_authenticated %}
+    <h1 class="titulo3"><a href="https://a22202735.pythonanywhere.com/AppCurso/apagaProjeto/{{projeto.disciplina.nome}}"><span class = "green">Apaga</span></a> ou <a href="https://a22202735.pythonanywhere.com/AppCurso/editaProjeto/{{projeto.disciplina.nome}}"><span class = "green">edita</span></a> este Projeto!</h1>
+{% else %}
+    <h1 class="titulo3"><a href="https://a22202735.pythonanywhere.com/Autenticacao/login/AppCurso/apagaProjeto/{{projeto.disciplina.nome}}"><span class = "green">Apaga</span></a> ou <a href="https://a22202735.pythonanywhere.com/Autenticacao/login/AppCurso/editaProjeto/{{projeto.disciplina.nome}}"><span class = "green">edita</span></a> este Projeto!</h1>
+{% endif %}
+
+
+
+
+                <div class="article-box1">
+                   <div class="info-content">
+                       <ul>
+                        <h4>Descrição</h4>
+                        <span class= "black">{{projeto.descricao}}</span>
+                        <h4>Conceitos Aplicados</h4>
+                        <span class= "black">{{projeto.conceitosAplicados}}</span>
+                        <h4>Tecnologias Utilizadas</h4>
+                        <span class= "black">{{projeto.tecnologiasUtilizadas}}</span>
+                        <h4>Linguagens Programação</h4>
+                        {% for linguagem in projeto.linguagensProgramacao.all %}
+                             <ul>
+                                <span class= "black">{{linguagem.nome}}</span>
+                             </ul>
+                        {% endfor %}
+                        <h4>Link Youtube</h4>
+                        <a href= "{{projeto.linkYoutube}}"><span class = "linkTexto">{{projeto.linkYoutube}}</span></a>
+                        <h4>Link GitHub</h4>
+                        <a href= "{{projeto.linkGitHub}}"><span class = "linkTexto">{{projeto.linkGitHub}}</span></a>
+
+                       </ul>
+                   </div>
+
+                </div>
+
+         </div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

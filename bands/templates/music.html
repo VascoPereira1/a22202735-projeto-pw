@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+
+    {% if request.user.is_authenticated %}
+        <a class = "teste"href="https://a22202735.pythonanywhere.com/Autenticacao/logout/AppBandas/musica/{{music.name}}"><button  class="button-22" role="button" >Logout</button></a>
+    {% else %}
+        <a class = "teste" href= "https://a22202735.pythonanywhere.com/Autenticacao/login/AppBandas/musica/{{music.name}}"><button  class="button-22" role="button">Login</button></a>
+    {% endif %}
+
+<h1>{{music.name}}</h1>
+
+<div class="info-box">
+    <div class="info-content">
+
+  <p>Url: <a href= "{{music.url}}"> {{music.url}}</a></p>
+  <p>Duração: {{music.duration}}</p>
+  <p>Album: <a href= "{% url 'bands:album' music.album.name %}">{{music.album.name}}</a></p>
+  <pre>Letra: {{music.letra}}</pre>
+
+<div class = "info-editarEapagar">
+{% if request.user.is_authenticated %}
+      <a href="{% url 'bands:edita_musica' music.name %}">Editar informação da Música!</a>
+{% else %}
+     <a href="https://a22202735.pythonanywhere.com/Autenticacao/login/AppBandas/editarMusica/{{music.name}}">Editar Informação da Música!</a>
+{% endif %}
+</div>
+
+<div class = "info-editarEapagar">
+{% if request.user.is_authenticated %}
+     <a href="{% url 'bands:apaga_musica' music.name %}">Apagar Música!</a>
+{% else %}
+     <a href="https://a22202735.pythonanywhere.com/Autenticacao/login/AppBandas/album/{{music.album.name}}">Apagar Música!</a>
+{% endif %}
+</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

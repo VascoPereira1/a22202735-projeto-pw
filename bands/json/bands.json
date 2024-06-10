@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Led Zeppelin",
+        "country": "United Kingdom",
+        "yearCreated": 1968
+    },
+    {
+        "name": "The Beatles",
+        "country": "United Kingdom",
+        "yearCreated": 1960
+    },
+    {
+        "name": "Queen",
+        "country": "United Kingdom",
+        "yearCreated": 1970
+    },
+    {
+        "name": "Pink Floyd",
+        "country": "United Kingdom",
+        "yearCreated": 1965
+    },
+    {
+        "name": "The Rolling Stones",
+        "country": "United Kingdom",
+        "yearCreated": 1962
+    },
+    {
+        "name": "AC/DC",
+        "country": "Australia",
+        "yearCreated": 1973
+    },
+    {
+        "name": "The Who",
+        "country": "United Kingdom",
+        "yearCreated": 1964
+    },
+    {
+        "name": "Guns N' Roses",
+        "country": "United States",
+        "yearCreated": 1985
+    },
+    {
+        "name": "Nirvana",
+        "country": "United States",
+        "yearCreated": 1987
+    },
+    {
+        "name": "Metallica",
+        "country": "United States",
+        "yearCreated": 1981
+    }
+]

@@ -1,0 +1,63 @@
+{% extends "layout3.html" %}
+
+{% block content %}
+
+
+
+        <div class = "cursoTeste">
+
+
+<h1 class="titulo2">{{disciplina.nome}}</h1>
+
+
+{% if request.user.is_authenticated %}
+    <h1 class="titulo3"><a href="https://a22202735.pythonanywhere.com/AppCurso/apagarDisciplina/{{disciplina.nome}}"><span class = "green">Apaga</span></a> ou <a href="https://a22202735.pythonanywhere.com/AppCurso/editaDisciplina/{{disciplina.nome}}"><span class = "green">edita</span></a> esta Disciplina!</h1>
+{% else %}
+    <h1 class="titulo3"><a href="https://a22202735.pythonanywhere.com/Autenticacao/login/AppCurso/apagarDisciplina/{{disciplina.nome}}"><span class = "green">Apaga</span></a> ou <a href="https://a22202735.pythonanywhere.com/Autenticacao/login/AppCurso/editaDisciplina/{{disciplina.nome}}"><span class = "green">edita</span></a> esta Disciplina!</h1>
+{% endif %}
+
+
+
+
+                <div class="article-box1">
+                   <div class="info-content">
+                       <ul>
+                        <h4>Área Científica</h4>
+                        <span class= "black">{{disciplina.areaCientifica.nome}}</span>
+                        <h4>Ano</h4>
+                        <span class= "black">{{disciplina.ano}}</span>
+                        <h4>Semestre</h4>
+                        <span class= "black">{{disciplina.semestre}}</span>
+                        <h4>ECTS</h4>
+                        <span class= "black">{{disciplina.ects}}</span>
+                        <h4>Curricular Unit Readable Code</h4>
+                        <span class= "black">{{disciplina.curricularUnitReadableCode}}</span>
+                        <h4>Linguagens Programação</h4>
+                        {% for linguagem in disciplina.linguagensProgramacao.all %}
+                             <ul>
+
+                                 <span class= "black">{{linguagem.nome}}</span>
+                             </ul>
+                        {% endfor %}
+                        <h4>Docentes</h4>
+                        {% for docente in disciplina.docentes.all %}
+                             <ul>
+                                 <span class= "black">{{ docente.nome }}</span>
+
+
+                             </ul>
+                        {% endfor %}
+                        <h4>Projeto</h4>
+                        <a href= "{% url 'cursos:projeto' disciplina.nome  %}">Projeto de {{disciplina.nome}}</a>
+
+                       </ul>
+                   </div>
+
+                </div>
+
+         </div>
+
+
+
+
+{% endblock %}

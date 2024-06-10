@@ -1,0 +1,325 @@
+[
+    {
+        "band": "Led Zeppelin",
+        "name": "Led Zeppelin",
+        "anoLancamento": 1969,
+        "musics": [
+            {
+                "url": "https://example.com/led-zeppelin/stairway-to-heaven",
+                "name": "Stairway to Heaven",
+                "duration": "8:02"
+            },
+            {
+                "url": "https://example.com/led-zeppelin/whole-lotta-love",
+                "name": "Whole Lotta Love",
+                "duration": "5:34"
+            }
+        ]
+    },
+    {
+        "band": "The Beatles",
+        "name": "Abbey Road",
+        "anoLancamento": 1969,
+        "musics": [
+            {
+                "url": "https://example.com/the-beatles/come-together",
+                "name": "Come Together",
+                "duration": "4:20"
+            },
+            {
+                "url": "https://example.com/the-beatles/something",
+                "name": "Something",
+                "duration": "3:03"
+            }
+        ]
+    },
+    {
+        "band": "Queen",
+        "name": "A Night at the Opera",
+        "anoLancamento": 1975,
+        "musics": [
+            {
+                "url": "https://example.com/queen/bohemian-rhapsody",
+                "name": "Bohemian Rhapsody",
+                "duration": "5:55"
+            },
+            {
+                "url": "https://example.com/queen/love-of-my-life",
+                "name": "Love of My Life",
+                "duration": "3:38"
+            }
+        ]
+    },
+    {
+        "band": "Pink Floyd",
+        "name": "The Dark Side of the Moon",
+        "anoLancamento": 1973,
+        "musics": [
+            {
+                "url": "https://example.com/pink-floyd/time",
+                "name": "Time",
+                "duration": "6:53"
+            },
+            {
+                "url": "https://example.com/pink-floyd/money",
+                "name": "Money",
+                "duration": "6:23"
+            }
+        ]
+    },
+    {
+        "band": "The Rolling Stones",
+        "name": "Let It Bleed",
+        "anoLancamento": 1969,
+        "musics": [
+            {
+                "url": "https://example.com/the-rolling-stones/gimme-shelter",
+                "name": "Gimme Shelter",
+                "duration": "4:31"
+            },
+            {
+                "url": "https://example.com/the-rolling-stones/you-cant-always-get-what-you-want",
+                "name": "You Can't Always Get What You Want",
+                "duration": "7:28"
+            }
+        ]
+    },
+    {
+        "band": "AC/DC",
+        "name": "Back in Black",
+        "anoLancamento": 1980,
+        "musics": [
+            {
+                "url": "https://example.com/acdc/back-in-black",
+                "name": "Back in Black",
+                "duration": "4:15"
+            },
+            {
+                "url": "https://example.com/acdc/shoot-to-thrill",
+                "name": "Shoot to Thrill",
+                "duration": "5:17"
+            }
+        ]
+    },
+    {
+        "band": "The Who",
+        "name": "Who's Next",
+        "anoLancamento": 1971,
+        "musics": [
+            {
+                "url": "https://example.com/the-who/baba-oriley",
+                "name": "Baba O'Riley",
+                "duration": "5:08"
+            },
+            {
+                "url": "https://example.com/the-who/wont-get-fooled-again",
+                "name": "Won't Get Fooled Again",
+                "duration": "8:32"
+            }
+        ]
+    },
+    {
+        "band": "Guns N' Roses",
+        "name": "Appetite for Destruction",
+        "anoLancamento": 1987,
+        "musics": [
+            {
+                "url": "https://example.com/guns-n-roses/welcome-to-the-jungle",
+                "name": "Welcome to the Jungle",
+                "duration": "4:31"
+            },
+            {
+                "url": "https://example.com/guns-n-roses/sweet-child-o-mine",
+                "name": "Sweet Child o' Mine",
+                "duration": "5:56"
+            }
+        ]
+    },
+    {
+        "band": "Nirvana",
+        "name": "Nevermind",
+        "anoLancamento": 1991,
+        "musics": [
+            {
+                "url": "https://example.com/nirvana/smells-like-teen-spirit",
+                "name": "Smells Like Teen Spirit",
+                "duration": "5:01"
+            },
+            {
+                "url": "https://example.com/nirvana/come-as-you-are",
+                "name": "Come as You Are",
+                "duration": "3:39"
+            }
+        ]
+    },
+    {
+        "band": "Metallica",
+        "name": "Master of Puppets",
+        "anoLancamento": 1986,
+        "musics": [
+            {
+                "url": "https://example.com/metallica/battery",
+                "name": "Battery",
+                "duration": "5:12"
+            },
+            {
+                "url": "https://example.com/metallica/master-of-puppets",
+                "name": "Master of Puppets",
+                "duration": "8:35"
+            }
+        ]
+    },
+    {
+        "band": "The Beatles",
+        "name": "Revolver",
+        "anoLancamento": 1966,
+        "musics": [
+            {
+                "url": "https://example.com/the-beatles/eleanor-rigby",
+                "name": "Eleanor Rigby",
+                "duration": "2:06"
+            },
+            {
+                "url": "https://example.com/the-beatles/yellow-submarine",
+                "name": "Yellow Submarine",
+                "duration": "2:38"
+            }
+        ]
+    },
+    {
+        "band": "Queen",
+        "name": "News of the World",
+        "anoLancamento": 1977,
+        "musics": [
+            {
+                "url": "https://example.com/queen/we-will-rock-you",
+                "name": "We Will Rock You",
+                "duration": "2:02"
+            },
+            {
+                "url": "https://example.com/queen/we-are-the-champions",
+                "name": "We Are the Champions",
+                "duration": "2:59"
+            }
+        ]
+    },
+    {
+        "band": "Pink Floyd",
+        "name": "The Wall",
+        "anoLancamento": 1979,
+        "musics": [
+            {
+                "url": "https://example.com/pink-floyd/another-brick-in-the-wall",
+                "name": "Another Brick in the Wall",
+                "duration": "3:59"
+            },
+            {
+                "url": "https://example.com/pink-floyd/comfortably-numb",
+                "name": "Comfortably Numb",
+                "duration": "6:22"
+            }
+        ]
+    },
+    {
+        "band": "The Rolling Stones",
+        "name": "Exile on Main St.",
+        "anoLancamento": 1972,
+        "musics": [
+            {
+                "url": "https://example.com/the-rolling-stones/rocks-off",
+                "name": "Rocks Off",
+                "duration": "4:31"
+            },
+            {
+                "url": "https://example.com/the-rolling-stones/tumbling-dice",
+                "name": "Tumbling Dice",
+                "duration": "3:45"
+            }
+        ]
+    },
+    {
+        "band": "AC/DC",
+        "name": "Highway to Hell",
+        "anoLancamento": 1979,
+        "musics": [
+            {
+                "url": "https://example.com/acdc/highway-to-hell",
+                "name": "Highway to Hell",
+                "duration": "3:29"
+            },
+            {
+                "url": "https://example.com/acdc/touch-too-much",
+                "name": "Touch Too Much",
+                "duration": "4:27"
+            }
+        ]
+    },
+    {
+        "band": "The Who",
+        "name": "Quadrophenia",
+        "anoLancamento": 1973,
+        "musics": [
+            {
+                "url": "https://example.com/the-who/the-real-me",
+                "name": "The Real Me",
+                "duration": "3:21"
+            },
+            {
+                "url": "https://example.com/the-who/love-reign-oer-me",
+                "name": "Love Reign o'er Me",
+                "duration": "5:48"
+            }
+        ]
+    },
+    {
+        "band": "Guns N' Roses",
+        "name": "Use Your Illusion I",
+        "anoLancamento": 1991,
+        "musics": [
+            {
+                "url": "https://example.com/guns-n-roses/november-rain",
+                "name": "November Rain",
+                "duration": "8:57"
+            },
+            {
+                "url": "https://example.com/guns-n-roses/dont-cry",
+                "name": "Don't Cry",
+                "duration": "4:44"
+            }
+        ]
+    },
+    {
+        "band": "Nirvana",
+        "name": "In Utero",
+        "anoLancamento": 1993,
+        "musics": [
+            {
+                "url": "https://example.com/nirvana/heart-shaped-box",
+                "name": "Heart-Shaped Box",
+                "duration": "4:41"
+            },
+            {
+                "url": "https://example.com/nirvana/all-apologies",
+                "name": "All Apologies",
+                "duration": "3:50"
+            }
+        ]
+    },
+    {
+        "band": "Metallica",
+        "name": "Ride the Lightning",
+        "anoLancamento": 1984,
+        "musics": [
+            {
+                "url": "https://example.com/metallica/for-whom-the-bell-tolls",
+                "name": "For Whom the Bell Tolls",
+                "duration": "5:10"
+            },
+            {
+                "url": "https://example.com/metallica/fade-to-black",
+                "name": "Fade to Black",
+                "duration": "6:56"
+            }
+        ]
+    }
+]

@@ -1,0 +1,70 @@
+/* estilos.css */
+
+/* General styles for both pages */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #83a4d4, #b6fbff);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 36px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+ul.weather-box {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px;
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+ul.weather-box li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+ul.weather-box li:last-child {
+    border-bottom: none;
+}
+
+ul.weather-box li span {
+    font-size: 18px;
+}
+
+ul.weather-box img {
+    width: 50px;
+    height: 50px;
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    ul.weather-box li {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    ul.weather-box img {
+        width: 40px;
+        height: 40px;
+    }
+}

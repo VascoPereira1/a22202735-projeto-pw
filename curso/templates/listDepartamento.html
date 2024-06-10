@@ -1,0 +1,23 @@
+{% extends "layout3.html" %}
+
+{% block content %}
+
+
+<div class = "cursoTeste">
+
+
+
+<h1 class="titulo2">{{departamento.nome}}</h1>
+
+
+{% if request.user.is_authenticated %}
+    <h1 class="titulo3"><a href="https://a22202735.pythonanywhere.com/AppCurso/apagarDepartamento/{{departamento.nome}}"><span class = "green">Apaga</span></a> ou <a href="https://a22202735.pythonanywhere.com/AppCurso/editaDepartamento/{{departamento.nome}}"><span class = "green">edita</span></a> este Departamento!</h1>
+{% else %}
+    <h1 class="titulo3"><a href="https://a22202735.pythonanywhere.com/Autenticacao/login/AppCurso/apagarDepartamento/{{departamento.nome}}"><span class = "green">Apaga</span></a> ou <a href="https://a22202735.pythonanywhere.com/Autenticacao/login/AppCurso/editaDepartamento/{{departamento.nome}}"><span class = "green">edita</span></a> este Departamento!</h1>
+{% endif %}
+
+
+
+    </div>
+
+{% endblock %}

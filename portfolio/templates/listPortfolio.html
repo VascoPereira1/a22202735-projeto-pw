@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap' rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'portfolio/estilos.css' %}">
+
+</head>
+<body>
+    <nav>
+  <div class="wrapper">
+    <div class="logo"><a href="#">VP</a></div>
+    <input type="radio" name="slider" id="menu-btn">
+    <input type="radio" name="slider" id="close-btn">
+    <ul class="nav-links">
+      <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+      <li><a href="https://a22202735.pythonanywhere.com">Home</a></li>
+      <li><a href="#">Sobre mim</a></li>
+      <li><a href="https://a22202735.pythonanywhere.com/Programação Web/">Programação Web</a></li>
+      <li>
+        <a href="#" class="desktop-item">Websites</a>
+        <input type="checkbox" id="showDrop">
+        <label for="showDrop" class="mobile-item">Websites</label>
+        <ul class="drop-menu">
+          <li><a href="https://a22202735.pythonanywhere.com/AppBandas/">AppBandas</a></li>
+          <li><a href="https://a22202735.pythonanywhere.com/BlogApp/">Fakebook</a></li>
+          <li><a href="http://a22202735.pythonanywhere.com/AppCurso/">AppCursos</a></li>
+        </ul>
+      </li>
+
+      <li><a href="https://www.instagram.com/vasc0_pereira/">Contacto</a></li>
+    </ul>
+    <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+  </div>
+</nav>
+
+<div class="body-text">
+  <div class="title">Responsive Dropdown and Mega Menu</div>
+  <div class="sub-title">using only HTML & CSS</div>
+</div>
+
+
+    <div class="landing">
+        <div class="content">
+            <h1>Portfolio</h1>
+            <p>Vasco Pereira</p>
+        </div>
+    </div>
+
+    <div id="section2" class="section">
+        <div class="sobreMim">
+         <div class="text">
+        <h2>Sobre mim</h2>
+        <p>Clica <a href="https://a22202735.pythonanywhere.com/Vasco%20Pereira/">aqui</a> para mais informações!</p>
+        <p>Olá, sou o Vasco Pereira, tenho 20 anos e sou estudante de Engenharia Informática na Universidade Lusófona de Lisboa. Tenho um grande gosto por estar com amigos e praticar desporto. Além disso, tenho um interesse especial por cibersegurança, uma área que me fascina cada vez mais.</p>
+        </div>
+        <img src="static/portfolio/Sem título.jpg" alt="Imagem Exemplo" class="float-image">
+        </div>
+
+        <h3>Os meus Websites</h3>
+        <div class="container">
+        <div class="column">
+            <img src="static/portfolio/Captura de ecrã 2024-06-09 040721.png"
+	 alt="Imagem 1" class="image">
+            <h2><a href="https://a22202735.pythonanywhere.com/AppBandas/">App Bandas</a></h2>
+             <p>Aqui, oferecemos uma plataforma completa para adicionar, editar e remover bandas, além de consultar informações detalhadas sobre elas. </p>
+        </div>
+        <div class="column">
+            <img src="static/portfolio/Captura de ecrã 2024-06-09 144126.png" alt="Imagem 2" class="image">
+            <h2><a href="https://a22202735.pythonanywhere.com/BlogApp/">Fakebook</a></h2>
+            <p>Neste site, oferecemos uma plataforma completa para adicionar, editar e remover artigos, além de consultar informações detalhadas sobre cada um deles.</p>
+        </div>
+        <div class="column">
+            <img src="static/portfolio/Captura de ecrã 2024-06-09 145630.png" alt="Imagem 3" class="image">
+            <h2><a href="http://a22202735.pythonanywhere.com/AppCurso/">App Cursos</a></h2>
+            <p>Explore a variedade de cursos que a nossa faculdade oferece. Descubra mais sobre cada curso, os planos de estudo, os requisitos e as oportunidades de carreira.</p>
+
+        </div>
+
+
+    </div>
+    <h3>A minha API</h3>
+     <div class="container">
+         <div class="columnAPI">
+             {% with previsao_hoje=dados.data.0 %}
+                {% if previsao_hoje.idWeatherType|length == 2 %}
+                    <img src="{% static 'meteo/w_ic_d_' %}{{ previsao_hoje.idWeatherType }}anim.svg" alt="Weather Icon" class = "imagemAPI">
+                {% else %}
+                    <img src="{% static 'meteo/w_ic_d_0' %}{{ previsao_hoje.idWeatherType }}anim.svg" alt="Weather Icon " class = "imagemAPI">
+                {% endif %}
+            {% endwith %}
+            <h2>API Meteorologia</h2>
+            <p>Seja bem-vindo ao nosso portal de meteorologia, onde fornecemos as previsões meteorológicas mais precisas e atualizadas para a sua região. Quer esteja a planear o seu dia ou uma viagem, <a href="https://a22202735.pythonanywhere.com/meteo/cidades">aqui</a> encontrará todas as informações meteorológicas de que precisa para se preparar adequadamente.</p>
+            <div id="clock"></div>
+            <script>
+            function updateClock() {
+                const now = new Date();
+                const clock = document.getElementById('clock');
+                 clock.innerHTML = now.toLocaleTimeString();
+            }
+
+            setInterval(updateClock, 1000);
+            updateClock();
+            </script>
+        </div>
+
+
+     </div>
+
+
+    </div>
+
+
+
+
+
+
+</body>
+</html>

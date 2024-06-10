@@ -1,0 +1,37 @@
+{% extends "layout3.html" %}
+
+{% block content %}
+
+
+        <div class = "cursoTeste">
+
+
+<h1 class="titulo2">Docentes</h1>
+
+
+{% if request.user.is_authenticated %}
+    <h1 class="titulo3">Adiciona <a href="https://a22202735.pythonanywhere.com/AppCurso/novoDocente"><span class = "green">aqui</span></a> um docente!</h1>
+{% else %}
+     <h1 class="titulo3">Adiciona <a href="https://a22202735.pythonanywhere.com/Autenticacao/login/AppCurso/novoDocente"><span class = "green">aqui</span></a> um docente!</h1>
+{% endif %}
+
+
+
+    {% for docente in docentes %}
+                <div class="article-box1">
+
+                   <div class="info-content">
+                       <ul>
+                        <h4><a href= "https://a22202735.pythonanywhere.com/AppCurso/docente/{{docente.nome}}">{{docente.nome}}</a></h4>
+                       </ul>
+                   </div>
+
+                </div>
+
+    {% endfor %}
+
+    </div>
+
+
+
+{% endblock %}

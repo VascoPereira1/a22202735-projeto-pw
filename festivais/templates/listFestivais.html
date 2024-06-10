@@ -1,0 +1,25 @@
+{% extends "layout4.html" %}
+
+{% block content %}
+
+
+
+     {% for localizacao in localizacoes %}
+     <h2>{{localizacao.nome}}</h2>
+        {% for festival in festivais %}
+            {% if festival.localizacao.nome == localizacao.nome %}
+                <ul>
+                    <li><a href= "{% url 'festivais:festival' festival.nome %}">{{festival.nome}}</a> Bandas:  {% for banda in festival.banda.all %}
+                     {{banda.nome}}
+                      {% endfor %}
+                     </li>
+
+                </ul>
+
+                {% endif %}
+        {% endfor %}
+    {% endfor %}
+
+    <h2>2024</h2>
+
+{% endblock %}

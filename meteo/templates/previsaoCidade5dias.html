@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Previsão Meteorológica para {{cidade}}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'meteo/estilos2.css' %}">
+</head>
+<body>
+    <h1>Previsão Meteorológica para {{cidade}}</h1>
+    {% for previsao_hoje in dados.data %}
+        <ul class="weather-box">
+            <li>
+                <span>Temperatura Mínima:</span>
+                <span>{{ previsao_hoje.tMin }}°C</span>
+            </li>
+            <li>
+                <span>Temperatura Máxima:</span>
+                <span>{{ previsao_hoje.tMax }}°C</span>
+            </li>
+            <li>
+                <span>Data:</span>
+                <span>{{ previsao_hoje.forecastDate }}</span>
+            </li>
+            {% for tempo in descricao_tempo.data %}
+                {% if tempo.idWeatherType == previsao_hoje.idWeatherType %}
+                    <li>
+                        <span>Descrição:</span>
+                        <span>{{ tempo.descWeatherTypePT }}</span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+            <li>
+                {% if previsao_hoje.idWeatherType|length == 2 %}
+                    <img src="{% static 'meteo/w_ic_d_' %}{{ previsao_hoje.idWeatherType }}anim.svg" alt="Weather Icon">
+                {% else %}
+                    <img src="{% static 'meteo/w_ic_d_0' %}{{ previsao_hoje.idWeatherType }}anim.svg" alt="Weather Icon">
+                {% endif %}
+            </li>
+        </ul>
+    {% endfor %}
+</body>
+</html>

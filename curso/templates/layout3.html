@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset = "UTF-8">
+ {% load static %}
+   <link rel="stylesheet" href="{% static 'cursos/estilos.css' %}">
+ <title>Curso</title>
+</head>
+<body>
+
+  <nav>
+  <div class="wrapper">
+    <div class="logo"><a href="https://a22202735.pythonanywhere.com/AppCurso/">AppCursos</a></div>
+    <input type="radio" name="slider" id="menu-btn">
+    <input type="radio" name="slider" id="close-btn">
+    <ul class="nav-links">
+      <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+      <li><a href="https://a22202735.pythonanywhere.com/AppCurso/departamentos">Departamentos</a></li>
+      <li><a href="https://a22202735.pythonanywhere.com/AppCurso/areasCientificas">Áreas Científicas</a></li>
+      <li><a href="https://a22202735.pythonanywhere.com/AppCurso/docentes">Docentes</a></li>
+        {% if request.user.is_authenticated %}
+            <li><a href="https://a22202735.pythonanywhere.com/Autenticacao/logout/AppCurso">Logout</a></li>
+        {% else %}
+            <li> <a href= "https://a22202735.pythonanywhere.com/Autenticacao/login/AppCurso">Login</a></li>
+        {% endif %}
+
+        <li><a href="#">Contacto</a></li>
+
+    </ul>
+    <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+  </div>
+</nav>
+
+<div class="body-container">
+    <div class="body-text">
+</div>
+</div>
+
+     {% block content %}
+     {% endblock %}
+
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,71 @@
+{% extends "layout2.html" %}
+
+{% block content %}
+
+
+  <div class="body-container">
+    <div class="body-text">
+        {% if request.user.is_authenticated %}
+        <div class="title"><a href="#">{{ user.first_name }}</a> em que estás a pensar?</div>
+        <div class="sub-title">Escreve algo <a href="https://a22202735.pythonanywhere.com/BlogApp/criarArtigo/novo">aqui</a>!</div>
+        {% else %}
+        <!-- Caso o usuário não esteja autenticado, alvez queira adicionar algo aqui -->
+        {% endif %}
+    </div>
+
+    <div class="body-content">
+        <div class="column column-sport">
+            <div class="text-box">
+            <h2>Entretenimento</h2>
+            </div>
+            {% for artigo in artigos %}
+            {% if artigo.categoria == 'Entretenimento' %}
+            <div class="article-box">
+                <img src="{{ artigo.imagem.url }}" alt="{{ artigo.titulo }}">
+                <a href="{% url 'artigos:artigo' artigo.titulo %}" class="left-align">{{ artigo.titulo }}</a>
+                <div class="autor-text3">
+                <a href="http://a22202735.pythonanywhere.com/BlogApp/usuario/{{user.id}}"><span class="black">{{artigo.autor}}</span></a>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="column column-middle">
+            <div class="text-box">
+            <h2>Desporto</h2>
+            </div>
+            {% for artigo in artigos %}
+            {% if artigo.categoria == 'Desporto' %}
+            <div class="article-box">
+                <img src="{{ artigo.imagem.url }}" alt="{{ artigo.titulo }}">
+                <a href="{% url 'artigos:artigo' artigo.titulo %}" class="left-align">{{ artigo.titulo }}</a>
+                <div class="autor-text3">
+                <a href="http://a22202735.pythonanywhere.com/BlogApp/usuario/{{user.id}}"><span class="black">{{artigo.autor}}</span></a>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="column column-other">
+            <div class="text-box">
+            <h2>Politica</h2>
+            </div>
+            {% for artigo in artigos %}
+            {% if artigo.categoria == 'Politica' %}
+            <div class="article-box">
+                <img src="{{ artigo.imagem.url }}" alt="{{ artigo.titulo }}">
+                <a href="{% url 'artigos:artigo' artigo.titulo %}" class="left-align">{{ artigo.titulo }}</a>
+                <div class="autor-text3">
+                <a href="http://a22202735.pythonanywhere.com/BlogApp/usuario/{{user.id}}"><span class="black">{{artigo.autor}}</span></a>
+                </div>
+                <p>{{artigo.introducao}}</p>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

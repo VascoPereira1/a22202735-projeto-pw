@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset = "UTF-8">
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'bandas/estilos.css' %}">
+   <title>Bandas</title>
+</head>
+<body>
+
+    <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
+  	<label for="menu-icon"></label>
+  	<nav class="nav">
+  		<ul class="pt-5">
+  		    <li><a href="https://a22202735.pythonanywhere.com/AppBandas/homePage">Home Page</a></li>
+  			<li><a href="https://a22202735.pythonanywhere.com/AppBandas/">Bandas</a></li>
+  			<li><a href="https://a22202735.pythonanywhere.com/Autenticacao/login/Bandas">Login</a></li>
+  			<li><a href="https://a22202735.pythonanywhere.com/Autenticacao/logout/Bandas">Logout</a></li>
+  			<li><a href="https://www.instagram.com/vasc0_pereira/">Contacto</a></li>
+  		</ul>
+  	</nav>
+
+     {% block content %}
+     {% endblock %}
+</body>
+</html>
+

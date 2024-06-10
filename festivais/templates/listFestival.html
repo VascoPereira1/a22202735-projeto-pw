@@ -1,0 +1,19 @@
+{% extends "layout4.html" %}
+
+{% block content %}
+
+     <h2>{{festival.nome}}</h2>
+
+    <h3>Bandas</h3>
+    {% for banda1 in festival.banda.all %}
+    <ul>
+        <li>{{banda1.nome}}</li>
+
+    </ul>
+    {% endfor %}
+
+    <p><img src="{{festival.imagem.url }}" width="500" height="600"></p>
+
+
+{% endblock %}
+

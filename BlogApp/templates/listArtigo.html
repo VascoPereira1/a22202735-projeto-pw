@@ -1,0 +1,44 @@
+{% extends "layout2.html" %}
+
+{% block content %}
+<a href="http://a22202735.pythonanywhere.com/BlogApp/usuario/{{user.id}}">{{artigo.autor}}</a>
+
+        <div class="body-content">
+        <div class="column column-other1">
+                <div class="article-box3">
+                    <div class="autor-text5">
+                    <p class="titulo">{{artigo.titulo}}</p>
+                    <img src="{{ artigo.imagem.url }}" alt="{{ artigo.titulo }}">
+                    <li><span class="blue">Autor: </span><a href="http://a22202735.pythonanywhere.com/BlogApp/usuario/{{user.id}}"><span class="black">{{artigo.autor}}</span></a></li>
+                    <li><span class="blue">Hora da Publicação: </span>{{artigo.horaPublicacao}}</li>
+                    <li><span class="blue">Categoria: </span>{{artigo.categoria}}</li>
+                    <li><span class="blue">Corpo do Artigo: </span>{{artigo.corpoDoArtigo}}</li>
+                    <p class="titulo1">Comentários:</p>
+                    <div>
+                    <p><a href="https://a22202735.pythonanywhere.com/BlogApp/criarComentario/novo/{{artigo.titulo}}"><span class="blue">Clica aqui para adicionar um comentário</span></a></p>
+                    </div>
+                    {% for comentario in comentarios %}
+                    {% for info in comentario.autor.infoAdicionalUser.all %}
+                    <div class="autor-text1">
+                    <img src="{{ info.imagem.url }}" alt="{{ comentario.autor.first_name }}">
+                    <p>{{comentario.autor.username}}</p>
+                    </div>
+                    {% if request.user == comentario.autor %}
+                    <li class="comentario"><p>{{comentario.comentario}} <a href="https://a22202735.pythonanywhere.com/BlogApp/editarComentario/{{artigo.titulo}}/{{comentario.id}}"><span class="blue">(Editar)</span></a> <a href="https://a22202735.pythonanywhere.com/BlogApp/apagarComentario/{{artigo.titulo}}/{{comentario.id}}"><span class="blue">(Apagar)</span></a></p></li>
+                    {% else %}
+                    <li class="comentario"><p>{{comentario.comentario}}</p></li>
+                    {% endif %}
+                    <li class="comentario"><p>Rating: {{comentario.rating}}</p></li>
+                    <li class="comentario"><p>{{comentario.horaComentario}}</p></li>
+                    {% endfor %}
+                    {% endfor %}
+                </div>
+    </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}

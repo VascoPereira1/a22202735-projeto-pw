@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Previsão Meteorológica</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'meteo/estilos1.css' %}">
+</head>
+<body>
+    <h1>Cidades</h1>
+    <ul>
+        {% for cidade in cidades.data %}
+        <li>
+            <a href="https://a22202735.pythonanywhere.com/meteo/previsao/{{cidade.local}}/">{{ cidade.local }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

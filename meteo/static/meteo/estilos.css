@@ -1,0 +1,104 @@
+/* styles.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #83a4d4, #b6fbff);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.weather-box {
+    list-style-type: none;
+    padding: 0;
+    max-width: 400px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.weather-box li {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #555;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weather-box li:last-child {
+    margin-bottom: 0;
+}
+
+.weather-box li img {
+    display: block;
+    margin: 10px auto;
+    max-width: 80px;
+}
+
+.weather-box li:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.weather-box li:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .weather-box {
+        padding: 15px;
+    }
+
+    .weather-box li {
+        font-size: 16px;
+    }
+}
+
+/* Adicione estas regras ao seu arquivo estilos.css */
+
+/* Estilo para o botão */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Para remover o sublinhado do link */
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+.button:active {
+    background-color: #3e8e41;
+}
+
